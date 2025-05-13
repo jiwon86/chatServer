@@ -9,7 +9,7 @@ export class UsersController {
     constructor(private readonly usersService: UsersService){}
     
   /** 회원 가입 */
-  @Post()
+  @Post('register')
   create(@Body() dto: CreateUserDto) {
     return this.usersService.createUser(dto);
   }

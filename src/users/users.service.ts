@@ -28,7 +28,10 @@ export class UsersService {
     const hash = await bcrypt.hash(dto.password, 10);
 
     // 3) 엔티티 생성 & 저장
-    const entity = this.userRepo.create({ email: dto.email, password: hash });
+    const entity = this.userRepo.create({ 
+      email: dto.email,
+      name: dto.name,
+      password: hash });
     return this.userRepo.save(entity);
   }
 
